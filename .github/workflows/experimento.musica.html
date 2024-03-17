@@ -20,7 +20,8 @@
 
         function fetchTopSongs(artist) {
             var apiKey = "9e06728c486bda235dbc686173e8b6c3";
-            var url = "https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + encodeURIComponent(artist) + "&api_key=" + apiKey + "&format=json";
+            var proxyUrl = "https://cors-anywhere.herokuapp.com/";
+            var url = proxyUrl + "https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + encodeURIComponent(artist) + "&api_key=" + apiKey + "&format=json";
 
             fetch(url)
             .then(response => response.json())
